@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datas
 {
@@ -14,7 +9,7 @@ namespace Datas
         public static IServiceCollection AddData(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddDbContext<PMContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("ConnectionMain")));
-
+            services.AddScoped<IData, Data>();
             return services;
         }
     }
