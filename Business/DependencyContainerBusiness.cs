@@ -14,6 +14,7 @@ namespace Business
         public static IServiceCollection AddBusiness(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<BIProduct, BProduct>();
+            services.AddData(configuration);
             return services;
         }
     }

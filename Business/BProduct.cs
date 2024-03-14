@@ -45,7 +45,9 @@ namespace Business
         {
             object obj = new
             {
-                @Accion = accion
+                @Accion = accion,
+                @Nombre = DBNull.Value,
+                @Id = DBNull.Value
             };
             return await Repo.SqlQuerySpListAsync<Product>(SP, obj);
         }

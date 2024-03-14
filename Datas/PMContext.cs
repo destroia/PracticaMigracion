@@ -7,5 +7,9 @@ namespace Datas
         public PMContext(DbContextOptions<PMContext> options) : base(options)
         {
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.AddModelsBuilders();
+        }
     }
 }
